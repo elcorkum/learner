@@ -34,7 +34,7 @@ class StudentShould {
         double numberOfHours = 20.5;
         student.learn(numberOfHours);
         double expected = totalStudyTime + numberOfHours;
-        double actual = student.getTotalStudyRime();
+        double actual = student.getTotalStudyTime();
         assertEquals(expected, actual);
     }
 

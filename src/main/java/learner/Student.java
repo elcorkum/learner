@@ -13,7 +13,7 @@ public class Student extends Person implements Learner{
     }
 
     @Override
-    public Double getTotalStudyRime() {
+    public Double getTotalStudyTime() {
         return this.totalStudyTime;
     }
 }

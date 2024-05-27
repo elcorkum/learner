@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class People{
+public class People <T extends Person>{
     private List<Person> personList;
 
     public List<Person> getPersonList() {
@@ -12,7 +12,7 @@ public class People{
     }
 
     public People(){
-        personList = new ArrayList<>();
+        personList = new ArrayList<Person>();
     }
 
     public void add(Person person){
@@ -30,7 +30,7 @@ public class People{
         return person;
     }
 
-    public boolean contains(Person person){
+    public  boolean contains(Person person){
         boolean isPresent = false;
         if (personList.contains(person)){
             isPresent = true;

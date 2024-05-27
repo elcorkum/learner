@@ -36,7 +36,7 @@ class InstructorShould {
         //when
         instructor.teach(student1, numberOfHours);
         double expected = totalStudyTime + numberOfHours;
-        double actual = student1.getTotalStudyRime();
+        double actual = student1.getTotalStudyTime();
         //then
         assertEquals(expected, actual);
     }
@@ -54,8 +54,8 @@ class InstructorShould {
         instructor.lecture(students, numberOfHours);
         double expected = totalStudyTime + numberOfHours/students.length;
         //then
-        assertEquals(expected, student2.getTotalStudyRime());
-        assertEquals(expected, student2.getTotalStudyRime());
+        assertEquals(expected, student2.getTotalStudyTime());
+        assertEquals(expected, student2.getTotalStudyTime());
 
     }
 
