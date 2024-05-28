@@ -4,48 +4,48 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class People <T extends Person>{
-    private List<Person> personList;
+public abstract class People <E extends Person>{
+    private List<E> personList;
 
-    public List<Person> getPersonList() {
+    public List<E> getPersonList() {
         return personList;
     }
 
     public People(){
-        personList = new ArrayList<Person>();
+        personList = new ArrayList<>();
     }
 
-    public void add(Person person){
-        personList.add(person);
+    public void add(E e){
+        personList.add(e);
     }
 
-    public Person findById(long id){
-        Person person = null;
-        for(Person p: personList){
-            if(id == p.getId()){
-                person = p;
+    public E findById(long id){
+        E personElement = null;
+        for(E e: personList){
+            if(id == e.getId()){
+                personElement = e;
                 break;
             }
         }
-        return person;
+        return personElement;
     }
 
-    public  boolean contains(Person person){
+    public  boolean contains(E e){
         boolean isPresent = false;
-        if (personList.contains(person)){
+        if (personList.contains(e)){
             isPresent = true;
         }
         return isPresent;
     }
 
-    public void remove(Person person){
-        personList.remove(person);
+    public void remove(E e){
+        personList.remove(e);
     }
 
     public void remove(long id){
-        for(Person p: personList){
-            if(id == p.getId()){
-                personList.remove(p);
+        for(E e: personList){
+            if(id == e.getId()){
+                personList.remove(e);
                 break;
             }
         }
@@ -59,11 +59,9 @@ public class People <T extends Person>{
         return personList.size();
     }
 
-    public Person[] toArray(){
-        return personList.toArray(new Person[0]);
-    }
+    public abstract E[] toArray();
 
-    public Iterator<Person> iterator(){
+    public Iterator<E> iterator(){
         return personList.iterator();
     }
 

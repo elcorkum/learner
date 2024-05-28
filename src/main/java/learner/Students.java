@@ -3,7 +3,7 @@ package learner;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Students extends People{
+public class Students extends People<Student>{
 
     private ArrayList<Student> c15Students;
     private static class LazyHolder{
@@ -30,6 +30,11 @@ public class Students extends People{
                                             new Student(18L, "Nick")));
     }
 
+    @Override
+    public Student[] toArray() {
+        return c15Students.toArray(new Student[0]);
+    }
+
     public static Students getInstance(){
         return LazyHolder.INSTANCE;
     }
@@ -37,4 +42,5 @@ public class Students extends People{
     public ArrayList<Student> getStudents(){
         return c15Students;
     }
+
 }

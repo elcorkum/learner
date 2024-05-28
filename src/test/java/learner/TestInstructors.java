@@ -16,7 +16,7 @@ class TestInstructors {
         ArrayList<Instructor> instructors = new ArrayList<>(List.of(new Instructor(19L, "Mikaila"),
                                                                     new Instructor(20L, "Other teacher")));
         Instructors instance = Instructors.getInstance();
-        ArrayList<Instructor> zipCodeInstructors = instance.getInstructors();
+        List<Person> zipCodeInstructors = instance.getInstructors();
 
         assertEquals(instructors.size(), zipCodeInstructors.size());
     }
