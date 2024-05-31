@@ -7,8 +7,9 @@ public class Instructors extends People<Instructor>{
     private List<Person> zipCodeInstructors;
 
     private Instructors(){
-        zipCodeInstructors = new ArrayList<>(List.of(new Instructor(19L, "Mikaila"),
-                                                        new Instructor(20L, "Other teacher")));
+        zipCodeInstructors = new ArrayList<>();
+//        List.of(new Instructor(19L, "Mikaila"),
+//                new Instructor(20L, "Other teacher"))
     }
 
     @Override

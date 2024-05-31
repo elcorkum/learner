@@ -13,12 +13,10 @@ class TestInstructors {
     @Test
     @DisplayName("To ensure instructors instance contains list of instructores")
     void testInstructorsSingleton(){
-        ArrayList<Instructor> instructors = new ArrayList<>(List.of(new Instructor(19L, "Mikaila"),
-                                                                    new Instructor(20L, "Other teacher")));
+        Educator educator1 = Educator.MIKAILA;
+        Educator educator2 = Educator.OTHERPERSON;
         Instructors instance = Instructors.getInstance();
         List<Person> zipCodeInstructors = instance.getInstructors();
-
-        assertEquals(instructors.size(), zipCodeInstructors.size());
+        assertEquals(2, zipCodeInstructors.size());
     }
-
 }
